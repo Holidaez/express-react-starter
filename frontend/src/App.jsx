@@ -5,6 +5,7 @@ import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import SignupFormPage from './components/SignupFormPage';
 import Navigation from './components/Navigation/Navigation-bonus';
 import * as sessionActions from './store/session';
+import { Modal } from './context/Modal';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function Layout() {
 
   return (
     <>
+      <Modal/>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && <Outlet />}
     </>
